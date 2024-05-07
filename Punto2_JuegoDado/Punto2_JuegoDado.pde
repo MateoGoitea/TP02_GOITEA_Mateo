@@ -1,10 +1,10 @@
 private Tablero tablero;
-private Dado dado;
-float d;
+private Dado dado;   
 
 public void setup(){
   size(800,400);
   background(0);
+
   
   tablero = new Tablero();
   dado = new Dado();
@@ -12,13 +12,15 @@ public void setup(){
 
 public void draw(){
   tablero.display();
-  tablero.mostrarValor();
-
-  
-  println(d);
-  
+  tablero.mostrarValor();  
 }
 
 public void mouseReleased(){
-  d=random((int)1, 7);
+  dado.generarValor();
+}
+
+public void keyReleased(){
+  if (keyCode==ENTER || dado.getCont()>11){
+    dado.mostrarResultados();
+  }
 }

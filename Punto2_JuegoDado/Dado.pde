@@ -5,7 +5,18 @@ private class Dado extends GameObject {
   private int valor;
   private int tamDado;
   private int tamPuntos;
-  private float centroX, centroY, izqSupX, izqSupY, derSupX, derSupY, izqInfX, izqInfY, derInfX, derInfY, izqMidX, izqMidY, derMidX, derMidY;
+  private float centroX, centroY,
+                izqSupX, izqSupY,
+                derSupX, derSupY,
+                izqInfX, izqInfY,
+                derInfX, derInfY,
+                izqMidX, izqMidY,
+                derMidX, derMidY;
+                
+  private float d;
+  private float resultados[];
+  private int c, i, x;
+ 
 
   public Dado() {
 
@@ -15,6 +26,10 @@ private class Dado extends GameObject {
     tamDado= 50;
     tamPuntos= 10;
     posicion = new PVector(width/2-tamDado/2, height/2-tamDado/2);
+    
+    c=0;
+    x=0;
+    resultados = new float[12];
 
     //Posiciones de los puntos-------------------------------------------------------
     centroX=posicion.x+tamDado/2;
@@ -38,10 +53,31 @@ private class Dado extends GameObject {
     derMidX=posicion.x+tamDado-10;
     derMidY=posicion.y+tamDado/2;
   }
+  
+  public void generarValor(){
+    d=random((int)1, 7);
+    resultados[c]=d;
+    c++;
+  }
+  
+  public void mostrarResultados(){
+    println("Resultados obtenidos:");
+    for (i=0;i<12;i++){
+      print((int)resultados[i]+"  ");
+      x++;
+      if (x==4){
+        println();
+        x=0;
+      }
+    }
+    x=0;
+    println();
+  }
 
   public void display() {
     valor=(int)d;
-
+    
+    
     switch (valor) {
     case 1:
       fill(colorDado);
@@ -99,5 +135,9 @@ private class Dado extends GameObject {
   
   public int getValor(){
     return this.valor;
+  }
+  
+  public int getCont(){
+    return this.c;
   }
 }

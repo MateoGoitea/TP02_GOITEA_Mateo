@@ -1,15 +1,21 @@
 private class Tablero extends GameObject{
   
+  private color colorTablero;
+  private int tableWidth;
+  private int tableHeight;
   private color colorTexto;
   
   public Tablero(){
     posicion = new PVector(100,100);
     colorTexto=color(#A0FFED);
+    colorTablero=color(#281E86);
+    tableWidth=600;
+    tableHeight=200;
   }
   
   public void display(){
-    fill(#281E86);
-    rect(posicion.x,posicion.y,600,200);
+    fill(colorTablero);
+    rect(posicion.x,posicion.y,tableWidth,tableHeight);
     
     
     
