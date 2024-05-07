@@ -13,7 +13,7 @@ public void setup(){
 public void draw(){
   tablero.display();
   tablero.mostrarValor();
-  dado.display();
+
   
   println(d);
   
