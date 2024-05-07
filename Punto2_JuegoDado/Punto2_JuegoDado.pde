@@ -1,5 +1,5 @@
 private Tablero tablero;
-private Dado[] dado;
+private Dado dado;
 float d;
 
 public void setup(){
@@ -7,10 +7,15 @@ public void setup(){
   background(0);
   
   tablero = new Tablero();
-  dado = new Dado[8];
+  dado = new Dado();
 }
 
 public void draw(){
+  tablero.display();
+  tablero.mostrarValor();
+  dado.display();
+  
+  println(d);
   
 }
 
