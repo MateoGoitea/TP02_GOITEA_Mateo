@@ -62,7 +62,7 @@ private class Dado extends GameObject {
   
   public void mostrarResultados(){
     println("Resultados obtenidos:");
-    for (i=0;i<12;i++){
+    for (i=0;i<resultados.length;i++){
       print((int)resultados[i]+"  ");
       x++;
       if (x==4){
