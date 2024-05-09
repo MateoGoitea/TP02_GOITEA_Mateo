@@ -1,14 +1,14 @@
 private Nave nave;
-private Bala bala;
 private Asteroid asteroid;
 private Enemy enemy;
+private DisparadorBalas disparador;
 
 public void setup(){
   
   nave = new Nave();
-  bala = new Bala();
   asteroid = new Asteroid();
   enemy = new Enemy();
+  disparador = new DisparadorBalas();
   
 }
 

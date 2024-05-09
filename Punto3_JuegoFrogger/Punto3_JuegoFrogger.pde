@@ -1,7 +1,5 @@
 private JoyPad joyPad;
 private Jugador jugador;
-private Vehiculo vehiculo;
-private Obstaculo obstaculo;
 private Calle calle;
 private Lago lago;
 private Objetivo objetivo;
@@ -15,14 +13,6 @@ public void setup(){
   jugador = new Jugador();
   jugador.setPosicion(new PVector());
   jugador.setVelocidad(new PVector());
-  
-  vehiculo = new Vehiculo();
-  vehiculo.setPosicion(new PVector());
-  vehiculo.setVelocidad(new PVector());
-  
-  obstaculo = new Obstaculo();
-  obstaculo.setPosicion(new PVector());
-  obstaculo.setVelocidad(new PVector());
   
   calle = new Calle();
   calle.setPosicion(new PVector());
