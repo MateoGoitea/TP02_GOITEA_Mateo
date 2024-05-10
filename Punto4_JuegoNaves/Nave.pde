@@ -34,7 +34,18 @@ private class Nave extends GameObject implements IDisplayable, IMoveable, IContr
   }
   
   public void readCommand(){
-    
+    if (keyCode==UP){
+      upPressed=true;
+    }
+    if (keyCode==DOWN){
+      downPressed=true;
+    }
+    if (keyCode==RIGHT){
+      rightPressed=true;
+    }
+    if (keyCode==LEFT){
+      leftPressed=true;
+    }
     
     
   }

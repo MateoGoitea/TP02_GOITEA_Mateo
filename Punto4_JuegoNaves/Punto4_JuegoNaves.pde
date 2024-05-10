@@ -18,22 +18,12 @@ public void setup(){
 public void draw(){
   fondo.display();
   nave.display();
+  asteroid.display();
   enemy.display();
 }
 
 public void keyPressed(){
-  if (keyCode==UP){
-      nave.setUpPressed(true);
-    }
-    if (keyCode==DOWN){
-      nave.setDownPressed(true);
-    }
-    if (keyCode==RIGHT){
-      nave.setRightPressed(true);
-    }
-    if (keyCode==LEFT){
-      nave.setLeftPressed(true);
-    }
+  nave.readCommand();
 }
 
 public void keyReleased(){
