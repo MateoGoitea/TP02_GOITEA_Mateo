@@ -19,4 +19,5 @@ private class Enemy extends GameObject implements IDisplayable, IMoveable{
     }
     posicion.x += vel;
   }
+
 }
