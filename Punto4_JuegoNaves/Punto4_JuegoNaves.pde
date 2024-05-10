@@ -1,17 +1,24 @@
 private Nave nave;
 private Asteroid asteroid;
 private Enemy enemy;
-private DisparadorBalas disparador;
+private Bala[] bala = new Bala[20];
+
 private Fondo fondo;
 
 public void setup(){
   size(400,600);
   
+  fondo = new Fondo();
   nave = new Nave();
   asteroid = new Asteroid();
   enemy = new Enemy();
-  disparador = new DisparadorBalas();
-  fondo = new Fondo();
+  
+  for (int i=0; i<bala.length;i++){
+    bala[i]=new Bala(nave.getPosicionX(),nave.getPosicionY(),5);
+  }
+
+ 
+
   
 }
 
@@ -20,6 +27,11 @@ public void draw(){
   nave.display();
   asteroid.display();
   enemy.display();
+  
+  for (int i=0; i<bala.length;i++){
+    bala[i].mover();
+    bala[i].display();
+  } 
 }
 
 public void keyPressed(){
@@ -29,14 +41,16 @@ public void keyPressed(){
 public void keyReleased(){
   if (keyCode==UP){
       nave.setUpPressed(false);
-    }
-    if (keyCode==DOWN){
-      nave.setDownPressed(false);
-    }
-    if (keyCode==RIGHT){
-      nave.setRightPressed(false);
-    }
-    if (keyCode==LEFT){
-      nave.setLeftPressed(false);
-    }
+  }
+  if (keyCode==DOWN){
+    nave.setDownPressed(false);
+  }
+  if (keyCode==RIGHT){
+    nave.setRightPressed(false);
+  }
+  if (keyCode==LEFT){
+    nave.setLeftPressed(false);
+  }
+  
+  
 }

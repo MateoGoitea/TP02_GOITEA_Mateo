@@ -5,7 +5,7 @@ private class Nave extends GameObject implements IDisplayable, IMoveable, IContr
   private boolean downPressed;
   private boolean rightPressed;
   private boolean leftPressed;
-  
+
   public Nave(){
     posicion = new PVector(width/2,500);
     imagen = loadImage("nave.png");
@@ -76,5 +76,14 @@ private class Nave extends GameObject implements IDisplayable, IMoveable, IContr
   }
   public void setLeftPressed(boolean leftPressed){
     this.leftPressed=leftPressed;
+  }
+  
+  
+  public float getPosicionX(){
+    return this.posicion.x;
+  }
+  
+  public float getPosicionY(){
+    return this.posicion.y;
   }
 }
