@@ -2,7 +2,6 @@ private Nave nave;
 private Asteroid asteroid;
 private Enemy enemy;
 private Bala[] bala = new Bala[20];
-
 private Fondo fondo;
 
 public void setup(){
@@ -14,12 +13,8 @@ public void setup(){
   enemy = new Enemy();
   
   for (int i=0; i<bala.length;i++){
-    bala[i]=new Bala(nave.getPosicionX(),nave.getPosicionY(),5);
-  }
-
- 
-
-  
+    bala[i]=new Bala();
+  }  
 }
 
 public void draw(){
@@ -29,7 +24,6 @@ public void draw(){
   enemy.display();
   
   for (int i=0; i<bala.length;i++){
-    bala[i].mover();
     bala[i].display();
   } 
 }

@@ -6,31 +6,26 @@ private class Bala extends GameObject implements IDisplayable, IMoveable{
   
   public Bala(){
     posicion = new PVector(0,0);
-  }
-  
-  public Bala(float temposX,float temposY,int tempVel){
-    vel = tempVel;
-    posX = temposX;
-    posY = temposY;
+    posX = nave.getPosicionX()+50;
+    posY = nave.getPosicionY();
+    vel = 50;
   }
   
   public void display(){
-    posicion.x=posX+50;
-    this.mover();
-    
-    
     fill(#ffffff);
     stroke(#DBFA77);
     strokeWeight(3);
-    ellipse(posicion.x,posicion.y,10,20);
+    ellipse(posX,posY,10,20);
     
+    this.mover(); 
   }
   
   public void mover(){
+    if(posY<0){
+          posY=nave.getPosicionY();
+          posX=nave.getPosicionX()+50;
+    }
+    posY-=vel;
+  }
 
-  }
-  
-  public PVector getPosicion(){
-    return this.posicion;
-  }
 }
